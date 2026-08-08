@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday, My Love</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         BACKGROUND MUSIC
+    ========================== -->
+
+    <audio id="backgroundMusic" loop>
+        <source src="music/birthday-song.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- =========================
+         ENTRANCE
+    ========================== -->
+
+    <section id="entrance">
+
+        <div class="stars"></div>
+
+        <div class="museum-building">
+
+            <div class="roof"></div>
+
+            <div class="museum-name">
+                OUR LITTLE MUSEUM
+            </div>
+
+            <div class="columns">
+
+                <div class="column"></div>
+
+                <div class="museum-door">
+
+                    <div class="door-left"></div>
+                    <div class="door-right"></div>
+
+                </div>
+
+                <div class="column"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="entrance-content">
+
+            <p class="small-title">
+                A SPECIAL EXHIBITION
+            </p>
+
+            <h1>
+                HAPPY BIRTHDAY,<br>
+                <span>MY LOVE</span>
+            </h1>
+
+            <p>
+                A little museum made especially for you.
+            </p>
+
+            <button onclick="enterGallery()">
+                ENTER GALLERY
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MUSEUM WALL
+    ========================== -->
+
+    <section id="gallery">
+
+        <header>
+
+            <div class="logo">
+                ♡
+            </div>
+
+            <div>
+
+                <h2>
+                    Our Little Museum
+                </h2>
+
+                <p>
+                    A collection of our favorite memories
+                </p>
+
+            </div>
+
+            <button
+                class="music-button"
+                onclick="toggleMusic()"
+                id="musicButton">
+
+                ♫
+
+            </button>
+
+        </header>
+
+
+        <div class="gallery-wall">
+
+            <div class="wall-light"></div>
+
+
+            <!-- PICTURE 1 -->
+
+            <div
+                class="artwork"
+                onclick="openArtwork(1)">
+
+                <div class="frame">
+
+                    <img
+                        src="images/us1.jpeg"
+                        alt="Memory 1">
+
+                </div>
+
+                <div class="art-label">
+
+                    <h3>
+                        Our Beginning
+                    </h3>
+
+                    <p>
+                        01
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PICTURE 2 -->
+
+            <div
+                class="artwork"
+                onclick="openArtwork(2)">
+
+                <div class="frame">
+
+                    <img
+                        src="images/us2.jpeg"
+                        alt="Memory 2">
+
+                </div>
+
+                <div class="art-label">
+
+                    <h3>
+                        A Beautiful Moment
+                    </h3>
+
+                    <p>
+                        02
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PICTURE 3 -->
+
+            <div
+                class="artwork"
+                onclick="openArtwork(3)">
+
+                <div class="frame">
+
+                    <img
+                        src="images/us3.jpeg"
+                        alt="Memory 3">
+
+                </div>
+
+                <div class="art-label">
+
+                    <h3>
+                        With You
+                    </h3>
+
+                    <p>
+                        03
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PICTURE 4 -->
+
+            <div
+                class="artwork"
+                onclick="openArtwork(4)">
+
+                <div class="frame">
+
+                    <img
+                        src="images/us4.jpeg"
+                        alt="Memory 4">
+
+                </div>
+
+                <div class="art-label">
+
+                    <h3>
+                        One Of My Favorites
+                    </h3>
+
+                    <p>
+                        04
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PICTURE 5 -->
+
+            <div
+                class="artwork"
+                onclick="openArtwork(5)">
+
+                <div class="frame">
+
+                    <img
+                        src="images/us5.jpeg"
+                        alt="Memory 5">
+
+                </div>
+
+                <div class="art-label">
+
+                    <h3>
+                        Our Little Moments
+                    </h3>
+
+                    <p>
+                        05
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PICTURE 6 -->
+
+            <div
+                class="artwork"
+                onclick="openArtwork(6)">
+
+                <div class="frame">
+
+                    <img
+                        src="images/us6.jpeg"
+                        alt="Memory 6">
+
+                </div>
+
+                <div class="art-label">
+
+                    <h3>
+                        Always You
+                    </h3>
+
+                    <p>
+                        06
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PICTURE 7 -->
+
+            <div
+                class="artwork"
+                onclick="openArtwork(7)">
+
+                <div class="frame">
+
+                    <img
+                        src="images/us7.jpeg"
+                        alt="Memory 7">
+
+                </div>
+
+                <div class="art-label">
+
+                    <h3>
+                        Forever ♡
+                    </h3>
+
+                    <p>
+                        07
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <p class="wall-note">
+            Click an artwork to view its story ♡
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         ARTWORK + LETTER
+    ========================== -->
+
+    <section id="artworkPage">
+
+        <button
+            class="back-button"
+            onclick="backToGallery()">
+
+            ← BACK TO THE WALL
+
+        </button>
+
+
+        <div class="detail-container">
+
+
+            <!-- BIG PICTURE -->
+
+            <div class="detail-photo">
+
+                <div class="detail-frame">
+
+                    <img
+                        id="detailImage"
+                        src=""
+                        alt="Our memory">
+
+                </div>
+
+            </div>
+
+
+            <!-- LETTER -->
+
+            <div class="letter">
+
+                <p
+                    class="year"
+                    id="detailYear">
+
+                    2026
+
+                </p>
+
+
+                <h1 id="detailTitle">
+
+                    Our Story
+
+                </h1>
+
+
+                <hr>
+
+
+                <div id="letterText">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

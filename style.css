@@ -1,0 +1,967 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+
+    background: #260914;
+
+    color: white;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    font-family: Georgia, "Times New Roman", serif;
+
+    cursor: pointer;
+
+    border: 1px solid #e5c77d;
+
+    background: transparent;
+
+    color: #f4d98f;
+
+    padding: 13px 28px;
+
+    letter-spacing: 2px;
+
+    transition: 0.4s;
+}
+
+
+button:hover {
+    background: #e5c77d;
+
+    color: #34101b;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 30px rgba(229, 199, 125, 0.3);
+}
+
+
+/* =========================
+   ENTRANCE
+========================= */
+
+#entrance {
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #a4475d,
+            #4b1025 45%,
+            #19060e 100%
+        );
+}
+
+
+.stars {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        radial-gradient(circle, #fff 1px, transparent 1px),
+        radial-gradient(circle, #e8c97a 1px, transparent 1px);
+
+    background-size: 80px 80px, 120px 120px;
+
+    opacity: 0.3;
+
+    animation: starsMove 15s linear infinite;
+}
+
+
+@keyframes starsMove {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(80px);
+    }
+}
+
+
+/* =========================
+   MUSEUM BUILDING
+========================= */
+
+.museum-building {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 650px;
+
+    max-width: 90%;
+
+    height: 430px;
+
+    background: #741f3c;
+
+    border: 5px solid #d6b46b;
+
+    box-shadow:
+        0 0 50px rgba(0, 0, 0, 0.7);
+
+    animation: buildingAppear 1.5s ease;
+}
+
+
+@keyframes buildingAppear {
+
+    from {
+        transform: translateY(100px);
+
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+
+        opacity: 1;
+    }
+}
+
+
+.roof {
+    position: absolute;
+
+    top: -70px;
+
+    left: -30px;
+
+    width: calc(100% + 60px);
+
+    height: 90px;
+
+    background: #491326;
+
+    border: 5px solid #d6b46b;
+
+    clip-path: polygon(
+        50% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+
+.museum-name {
+    text-align: center;
+
+    margin-top: 35px;
+
+    font-size: 30px;
+
+    letter-spacing: 6px;
+
+    color: #f0d58f;
+}
+
+
+.columns {
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: flex-end;
+}
+
+
+.column {
+    width: 75px;
+
+    height: 280px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #c8a96b,
+            #f0d894,
+            #c8a96b
+        );
+
+    border: 4px solid #8b6834;
+}
+
+
+.museum-door {
+    display: flex;
+
+    width: 230px;
+
+    height: 270px;
+
+    background: #eee1bd;
+
+    border: 7px solid #876532;
+
+    position: relative;
+
+    z-index: 2;
+
+    box-shadow:
+        0 0 30px rgba(255, 222, 146, 0.3);
+
+    animation: doorGlow 3s infinite;
+}
+
+
+@keyframes doorGlow {
+
+    50% {
+        box-shadow:
+            0 0 50px rgba(255, 222, 146, 0.6);
+    }
+}
+
+
+.door-left,
+.door-right {
+    width: 50%;
+
+    height: 100%;
+
+    border: 2px solid #b89b65;
+
+    background: #efe4c4;
+}
+
+
+.door-left {
+    border-right: 1px solid #8d754c;
+}
+
+
+.door-right {
+    border-left: 1px solid #8d754c;
+}
+
+
+/* =========================
+   ENTRANCE TEXT
+========================= */
+
+.entrance-content {
+    position: relative;
+
+    z-index: 10;
+
+    text-align: center;
+
+    margin-top: -200px;
+
+    animation: contentAppear 2s ease;
+}
+
+
+@keyframes contentAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+.small-title {
+    letter-spacing: 5px;
+
+    font-size: 12px;
+
+    color: #e8c97e;
+}
+
+
+.entrance-content h1 {
+    margin: 20px 0;
+
+    font-size: 52px;
+
+    line-height: 1;
+
+    color: white;
+
+    text-shadow:
+        3px 3px 0 #57152b,
+        0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+
+.entrance-content h1 span {
+    color: #f0d48b;
+}
+
+
+.entrance-content > p:not(.small-title) {
+    margin-bottom: 25px;
+
+    color: #ead8dc;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+#gallery {
+    display: none;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #a33d57,
+            #400c1d 75%
+        );
+
+    animation: galleryFade 1s ease;
+}
+
+
+@keyframes galleryFade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+header {
+    height: 110px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 25px 50px;
+
+    background: rgba(45, 7, 19, 0.4);
+
+    border-bottom: 1px solid rgba(238, 208, 134, 0.3);
+}
+
+
+.logo {
+    font-size: 42px;
+
+    color: #f2d48b;
+
+    animation: heartBeat 2s infinite;
+}
+
+
+@keyframes heartBeat {
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+header h2 {
+    font-size: 30px;
+
+    color: #fff;
+}
+
+
+header p {
+    margin-top: 4px;
+
+    color: #d8bfc5;
+}
+
+
+.music-button {
+    margin-left: auto;
+
+    width: 50px;
+
+    height: 50px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   MUSEUM WALL
+========================= */
+
+.gallery-wall {
+    position: relative;
+
+    min-height: 70vh;
+
+    padding: 70px 50px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 80px 60px;
+
+    justify-items: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.2),
+            transparent,
+            rgba(0, 0, 0, 0.2)
+        );
+}
+
+
+.wall-light {
+    position: absolute;
+
+    top: -100px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 600px;
+
+    height: 500px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255, 218, 143, 0.18),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   ARTWORK
+========================= */
+
+.artwork {
+    width: 250px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation: artworkFloat 4s ease-in-out infinite;
+
+    transition: 0.5s;
+}
+
+
+.artwork:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+
+.artwork:nth-child(4) {
+    animation-delay: 1s;
+}
+
+
+.artwork:nth-child(5) {
+    animation-delay: 1.5s;
+}
+
+
+.artwork:nth-child(6) {
+    animation-delay: 2s;
+}
+
+
+.artwork:nth-child(7) {
+    animation-delay: 2.5s;
+}
+
+
+.artwork:nth-child(8) {
+    animation-delay: 3s;
+}
+
+
+@keyframes artworkFloat {
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+.artwork:hover {
+    transform:
+        translateY(-15px)
+        scale(1.04);
+}
+
+
+.frame {
+    padding: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #806029,
+            #e1c276,
+            #806029
+        );
+
+    border: 5px solid #5d421d;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.7);
+
+    transition: 0.5s;
+}
+
+
+.artwork:hover .frame {
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(231, 202, 127, 0.35);
+}
+
+
+.frame img {
+    display: block;
+
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+    background: #d1ae65;
+}
+
+
+.art-label {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    min-width: 180px;
+
+    padding: 9px 15px;
+
+    background: #ead28c;
+
+    color: #35121c;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.art-label h3 {
+    font-size: 14px;
+}
+
+
+.art-label p {
+    margin-top: 3px;
+
+    font-size: 11px;
+}
+
+
+.wall-note {
+    text-align: center;
+
+    color: #cdb1b7;
+
+    padding-bottom: 30px;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   ARTWORK PAGE
+========================= */
+
+#artworkPage {
+    display: none;
+
+    min-height: 100vh;
+
+    padding: 35px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #9a3852,
+            #330a18 80%
+        );
+
+    animation: detailAppear 0.8s ease;
+}
+
+
+@keyframes detailAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+
+.back-button {
+    border: none;
+
+    padding: 10px 0;
+
+    color: #f0d38a;
+}
+
+
+.back-button:hover {
+    background: transparent;
+
+    color: white;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+.detail-container {
+    max-width: 1150px;
+
+    margin: 50px auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+.detail-photo {
+    display: flex;
+
+    justify-content: center;
+
+    animation: photoAppear 1s ease;
+}
+
+
+@keyframes photoAppear {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+
+.detail-frame {
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #806029,
+            #e1c276,
+            #806029
+        );
+
+    border: 6px solid #5c411c;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+
+.detail-frame img {
+    display: block;
+
+    width: 430px;
+
+    max-width: 100%;
+
+    height: 570px;
+
+    object-fit: cover;
+
+    background: #d1ae65;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    max-width: 500px;
+
+    line-height: 1.8;
+
+    color: #eadcdf;
+
+    animation: letterAppear 1s ease 0.3s both;
+}
+
+
+@keyframes letterAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+
+.year {
+    color: #d7bb76;
+
+    letter-spacing: 4px;
+
+    font-size: 14px;
+}
+
+
+.letter h1 {
+    margin: 10px 0;
+
+    font-size: 48px;
+
+    color: #f1d48b;
+}
+
+
+.letter hr {
+    margin: 25px 0;
+
+    border: none;
+
+    border-top: 1px solid #a77b4c;
+}
+
+
+.letter p {
+    margin-bottom: 18px;
+}
+
+
+.signature {
+    color: #f0d48b;
+}
+
+
+/* =========================
+   FADE OUT
+========================= */
+
+@keyframes fadeOut {
+
+    to {
+        opacity: 0;
+
+        transform: scale(1.08);
+    }
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media (max-width: 900px) {
+
+    .gallery-wall {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 50px 25px;
+
+        padding: 50px 20px;
+    }
+
+
+    .artwork {
+        width: 220px;
+    }
+
+
+    .frame img {
+        height: 280px;
+    }
+
+
+    .detail-container {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .museum-building {
+        width: 500px;
+
+        height: 350px;
+    }
+
+
+    .museum-name {
+        font-size: 20px;
+    }
+
+
+    .column {
+        width: 50px;
+
+        height: 220px;
+    }
+
+
+    .museum-door {
+        width: 170px;
+
+        height: 220px;
+    }
+
+
+    .entrance-content {
+        margin-top: -130px;
+    }
+
+
+    .entrance-content h1 {
+        font-size: 38px;
+    }
+
+
+    header {
+        padding: 20px;
+    }
+
+
+    header h2 {
+        font-size: 21px;
+    }
+
+
+    .gallery-wall {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+
+    .artwork {
+        width: 280px;
+    }
+
+
+    .frame img {
+        height: 340px;
+    }
+
+
+    .detail-frame img {
+        width: 330px;
+
+        height: 450px;
+    }
+
+
+    .letter h1 {
+        font-size: 38px;
+    }
+
+}
