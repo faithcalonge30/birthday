@@ -71,7 +71,7 @@ const artworks = {
 
     1: {
 
-        image: "images/us1.jpeg",
+        image: "us1.jpeg",
 
         title: "Our Beginning",
 
@@ -112,7 +112,7 @@ const artworks = {
 
     2: {
 
-        image: "images/us2.jpeg",
+        image: "us2.jpeg",
 
         title: "A Beautiful Moment",
 
@@ -146,7 +146,7 @@ const artworks = {
 
     3: {
 
-        image: "images/us3.jpeg",
+        image: "us3.jpeg",
 
         title: "With You",
 
@@ -180,7 +180,7 @@ const artworks = {
 
     4: {
 
-        image: "images/us4.jpeg",
+        image: "us4.jpeg",
 
         title: "One Of My Favorites",
 
@@ -214,7 +214,7 @@ const artworks = {
 
     5: {
 
-        image: "images/us5.jpeg",
+        image: "us5.jpeg",
 
         title: "Our Little Moments",
 
@@ -247,7 +247,7 @@ const artworks = {
 
     6: {
 
-        image: "images/us6.jpeg",
+        image: "us6.jpeg",
 
         title: "Always You",
 
@@ -281,7 +281,7 @@ const artworks = {
 
     7: {
 
-        image: "images/us7.jpeg",
+        image: "us7.jpeg",
 
         title: "Forever",
 
