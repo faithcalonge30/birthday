@@ -1,0 +1,1009 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+/* =====================================
+   BASIC RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    background: #350913;
+    color: #f5df9b;
+    overflow-x: hidden;
+}
+
+
+/* =====================================
+   PAGE SYSTEM
+===================================== */
+
+#entrance {
+    min-height: 100vh;
+    display: flex;
+}
+
+#entrance.hidden {
+    display: none;
+}
+
+#gallery {
+    display: none;
+    min-height: 100vh;
+}
+
+#gallery.active {
+    display: block;
+}
+
+#artworkPage {
+    display: none;
+    min-height: 100vh;
+}
+
+#artworkPage.active {
+    display: block;
+}
+
+
+/* =====================================
+   ENTRANCE
+===================================== */
+
+#entrance {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #7c2944 0%,
+            #4b1022 45%,
+            #25050d 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* Decorative circles */
+
+#entrance::before {
+    content: "";
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    border: 1px solid rgba(245, 223, 155, 0.15);
+    border-radius: 50%;
+
+    animation: rotate 30s linear infinite;
+}
+
+#entrance::after {
+    content: "";
+    position: absolute;
+
+    width: 850px;
+    height: 850px;
+
+    border: 1px solid rgba(245, 223, 155, 0.08);
+    border-radius: 50%;
+
+    animation: rotateReverse 40s linear infinite;
+}
+
+
+/* =====================================
+   MUSEUM BUILDING
+===================================== */
+
+.museum-building {
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(850px, 90%);
+    height: 250px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #b98d3d,
+            #6b4518
+        );
+
+    border-top: 5px solid #e8cb77;
+
+    box-shadow:
+        0 -10px 40px rgba(0,0,0,0.25);
+
+    opacity: 0.65;
+}
+
+
+.roof {
+    position: absolute;
+
+    top: -55px;
+    left: 5%;
+
+    width: 90%;
+    height: 55px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #e5c875,
+            #81591d
+        );
+
+    clip-path: polygon(
+        50% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+
+.museum-name {
+    text-align: center;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 20px;
+    letter-spacing: 5px;
+
+    padding-top: 25px;
+
+    color: #f5df9b;
+}
+
+
+.columns {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    height: 170px;
+
+    padding: 0 70px;
+}
+
+
+.column {
+    width: 45px;
+    height: 150px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #674314,
+            #e3c16b,
+            #674314
+        );
+
+    border-radius: 5px 5px 0 0;
+}
+
+
+.museum-door {
+    width: 180px;
+    height: 150px;
+
+    display: flex;
+
+    background: #27070e;
+
+    border:
+        5px solid #d8b75d;
+}
+
+
+.door-left,
+.door-right {
+    width: 50%;
+
+    border: 2px solid #8c6728;
+}
+
+
+/* =====================================
+   ENTRANCE CONTENT
+===================================== */
+
+.entrance-content {
+    position: relative;
+    z-index: 5;
+
+    margin-bottom: 180px;
+
+    animation: entranceFade 1.5s ease;
+}
+
+
+.small-title {
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+
+    opacity: 0.8;
+}
+
+
+.entrance-content h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 8vw, 100px);
+
+    line-height: 0.95;
+
+    font-weight: 600;
+
+    text-shadow:
+        0 0 20px rgba(245, 223, 155, 0.15);
+}
+
+
+.entrance-content h1 span {
+    font-style: italic;
+}
+
+
+.entrance-content > p:not(.small-title) {
+    font-size: 20px;
+
+    margin-top: 25px;
+
+    color: #f2e8d0;
+}
+
+
+.entrance-content button {
+    margin-top: 35px;
+
+    padding: 16px 42px;
+
+    border: 1px solid #e8cb77;
+
+    background: transparent;
+
+    color: #f5df9b;
+
+    font-family: inherit;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 0.4s ease;
+}
+
+
+.entrance-content button:hover {
+    background: #e8cb77;
+
+    color: #3b0915;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.3);
+}
+
+
+/* =====================================
+   GALLERY HEADER
+===================================== */
+
+#gallery {
+    background:
+        linear-gradient(
+            180deg,
+            #65152f,
+            #450b1c
+        );
+}
+
+
+#gallery header {
+    min-height: 115px;
+
+    padding: 25px 5%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background:
+        rgba(30, 3, 11, 0.45);
+
+    border-bottom:
+        1px solid rgba(245, 223, 155, 0.2);
+
+    animation: slideDown 1s ease;
+}
+
+
+.logo {
+    font-size: 42px;
+
+    margin-right: 18px;
+}
+
+
+#gallery header > div:nth-child(2) {
+    flex: 1;
+}
+
+
+#gallery header h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 32px;
+}
+
+
+#gallery header p {
+    font-size: 16px;
+
+    opacity: 0.7;
+}
+
+
+.music-button {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    border: 1px solid #e8cb77;
+
+    background: transparent;
+
+    color: #e8cb77;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.music-button:hover {
+    background: #e8cb77;
+
+    color: #3b0915;
+
+    transform: rotate(15deg);
+}
+
+
+/* =====================================
+   GALLERY WALL
+===================================== */
+
+.gallery-wall {
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 80px 5% 100px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 80px 7%;
+
+    align-items: start;
+}
+
+
+.artwork {
+    cursor: pointer;
+
+    text-align: center;
+
+    animation:
+        galleryAppear 1s ease forwards;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.artwork:hover {
+    transform: translateY(-15px);
+}
+
+
+/* =====================================
+   GOLD FRAME
+===================================== */
+
+.frame {
+    width: 100%;
+
+    aspect-ratio: 0.78;
+
+    padding: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8e6728,
+            #e5c875,
+            #6b4816,
+            #d9b75e
+        );
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.45),
+
+        inset 0 0 0 5px #4c2b0d,
+
+        inset 0 0 0 8px #d8b75d;
+}
+
+
+/* Actual picture */
+
+.frame img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border: 5px solid #f1d88b;
+
+    background: #c9a85d;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+
+.artwork:hover .frame img {
+    transform: scale(1.04);
+
+    filter: brightness(1.08);
+}
+
+
+/* =====================================
+   PHOTO LABEL
+===================================== */
+
+.art-label {
+    margin: 20px auto 0;
+
+    width: 70%;
+
+    padding: 12px;
+
+    background: #ead18a;
+
+    color: #3b0b15;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.2);
+
+    transition: 0.3s;
+}
+
+
+.art-label:hover {
+    transform: translateY(-3px);
+}
+
+
+.art-label h3 {
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 25px;
+
+    font-weight: 600;
+}
+
+
+/* Hide old extra text if any */
+
+.art-label p {
+    display: none;
+}
+
+
+/* =====================================
+   WALL NOTE
+===================================== */
+
+.wall-note {
+    text-align: center;
+
+    padding-bottom: 50px;
+
+    font-size: 16px;
+
+    opacity: 0.7;
+}
+
+
+/* =====================================
+   ARTWORK DETAIL PAGE
+===================================== */
+
+#artworkPage {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #792442,
+            #450b1c 65%,
+            #26050d
+        );
+
+    padding:
+        35px 6%;
+}
+
+
+.back-button {
+    background: none;
+
+    border: none;
+
+    color: #f1d88b;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+
+.back-button:hover {
+    transform: translateX(-7px);
+}
+
+
+.detail-container {
+    max-width: 1450px;
+
+    margin: 50px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(350px, 0.8fr)
+        minmax(400px, 1fr);
+
+    gap: 8%;
+
+    align-items: center;
+
+    animation:
+        detailAppear 0.8s ease;
+}
+
+
+/* =====================================
+   DETAIL PHOTO
+===================================== */
+
+.detail-photo {
+    width: 100%;
+}
+
+
+.detail-frame {
+    width: 100%;
+
+    aspect-ratio: 0.8;
+
+    padding: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #805d22,
+            #e6ca73,
+            #684714,
+            #d8b65b
+        );
+
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.5),
+
+        inset 0 0 0 6px #4b2b0e,
+
+        inset 0 0 0 10px #d9b95e;
+}
+
+
+.detail-frame img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border: 5px solid #f1d88b;
+
+    background: #c9a85d;
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+
+/* =====================================
+   LETTER
+===================================== */
+
+.letter {
+    color: #f4e8d4;
+}
+
+
+#detailTitle {
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(45px, 5vw, 75px);
+
+    line-height: 1;
+
+    margin-bottom: 30px;
+
+    color: #f1d88b;
+}
+
+
+.letter hr {
+    width: 100%;
+
+    height: 1px;
+
+    border: none;
+
+    background:
+        rgba(235, 203, 116, 0.5);
+
+    margin-bottom: 35px;
+}
+
+
+#letterText {
+    color: #f4e8d4;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    max-height: 55vh;
+
+    overflow-y: auto;
+
+    padding-right: 20px;
+}
+
+
+#letterText p {
+    margin-bottom: 22px;
+}
+
+
+#letterText strong {
+    color: #f1d88b;
+}
+
+
+/* Scrollbar for letter */
+
+#letterText::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+#letterText::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.05);
+}
+
+
+#letterText::-webkit-scrollbar-thumb {
+    background: #d8b75d;
+}
+
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes entranceFade {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+@keyframes rotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes rotateReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
+@keyframes slideDown {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes galleryAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(50px)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes detailAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 900px) {
+
+    .gallery-wall {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 50px 6%;
+    }
+
+
+    .detail-container {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .detail-frame {
+        max-width: 600px;
+
+        margin: auto;
+    }
+
+
+    .letter {
+        max-width: 800px;
+
+        margin: auto;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    #gallery header {
+        padding: 20px;
+    }
+
+
+    #gallery header h2 {
+        font-size: 24px;
+    }
+
+
+    #gallery header p {
+        font-size: 14px;
+    }
+
+
+    .logo {
+        font-size: 30px;
+    }
+
+
+    .gallery-wall {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+
+        padding:
+            50px 25px 70px;
+    }
+
+
+    .art-label {
+        width: 60%;
+    }
+
+
+    .entrance-content {
+        margin-bottom: 130px;
+
+        padding: 20px;
+    }
+
+
+    .entrance-content h1 {
+        font-size: clamp(42px, 12vw, 70px);
+    }
+
+
+    .entrance-content > p:not(.small-title) {
+        font-size: 17px;
+    }
+
+
+    .museum-building {
+        width: 100%;
+        height: 180px;
+    }
+
+
+    .columns {
+        height: 120px;
+        padding: 0 25px;
+    }
+
+
+    .column {
+        height: 100px;
+        width: 30px;
+    }
+
+
+    .museum-door {
+        height: 100px;
+        width: 120px;
+    }
+
+
+    #artworkPage {
+        padding: 25px 20px;
+    }
+
+
+    .detail-container {
+        margin-top: 35px;
+    }
+
+
+    #detailTitle {
+        font-size: 45px;
+    }
+
+
+    #letterText {
+        font-size: 17px;
+
+        max-height: none;
+
+        padding-right: 5px;
+    }
+
+}

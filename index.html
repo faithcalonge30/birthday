@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday, My Ella</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND MUSIC -->
+    <audio id="backgroundMusic" loop>
+        <source src="music/birthday-song.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- =========================
+         ENTRANCE
+    ========================== -->
+
+    <section id="entrance">
+
+        <div class="stars"></div>
+
+        <div class="museum-building">
+
+            <div class="roof"></div>
+
+            <div class="museum-name">
+                OUR LITTLE MUSEUM
+            </div>
+
+            <div class="columns">
+
+                <div class="column"></div>
+
+                <div class="museum-door">
+
+                    <div class="door-left"></div>
+                    <div class="door-right"></div>
+
+                </div>
+
+                <div class="column"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="entrance-content">
+
+            <p class="small-title">
+                A SPECIAL EXHIBITION
+            </p>
+
+            <h1>
+                HAPPY BIRTHDAY,<br>
+                <span>MY ELLA</span>
+            </h1>
+
+            <button onclick="enterGallery()">
+                ENTER GALLERY
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         GALLERY WALL
+    ========================== -->
+
+    <section id="gallery">
+
+        <header>
+
+            <div class="logo">
+                ♡
+            </div>
+
+            <div class="header-text">
+
+                <h2>
+                    Our Little Museum
+                </h2>
+
+                <p>
+                    A collection made just for you
+                </p>
+
+            </div>
+
+            <button
+                class="music-button"
+                id="musicButton"
+                onclick="toggleMusic()">
+
+                ♫
+
+            </button>
+
+        </header>
+
+
+        <div class="gallery-wall">
+
+    <!-- PHOTO 1 -->
+
+<div class="artwork" onclick="openArtwork(1)">
+
+    <div class="frame">
+        <img src="images/us3.jpeg" alt="Memory 1">
+    </div>
+
+    <div class="art-label">
+        <h3>1</h3>
+        <p>01</p>
+    </div>
+
+</div>
+
+
+    <!-- PHOTO 2 -->
+    <div class="artwork" onclick="openArtwork(2)">
+
+    <div class="frame">
+        <img src="images/us4.jpeg" alt="Memory 2">
+    </div>
+
+    <div class="art-label">
+        <h3>2</h3>
+        <p>02</p>
+    </div>
+
+</div>
+
+
+    <!-- PHOTO 3 -->
+    <div class="artwork" onclick="openArtwork(3)">
+
+    <div class="frame">
+        <img src="images/us5.jpeg" alt="Memory 3">
+    </div>
+
+    <div class="art-label">
+        <h3>3</h3>
+        <p>03</p>
+    </div>
+
+</div>
+
+</div>
+
+
+        <p class="wall-note">
+            Click a picture to open its letter ♡
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         PHOTO + LETTER
+    ========================== -->
+
+    <section id="artworkPage">
+
+        <button
+            class="back-button"
+            onclick="backToGallery()">
+
+            ← BACK TO THE WALL
+
+        </button>
+
+
+        <div class="detail-container">
+
+
+            <!-- PHOTO -->
+
+            <div class="detail-photo">
+
+                <div class="detail-frame">
+
+                    <img
+                        id="detailImage"
+                        src=""
+                        alt="Our memory">
+
+                </div>
+
+            </div>
+
+
+            <!-- LETTER -->
+
+            <div class="letter">
+
+                <p
+                    class="year"
+                    id="detailYear">
+
+                    2026
+
+                </p>
+
+
+                <h1 id="detailTitle">
+                    1
+                </h1>
+
+
+                <hr>
+
+
+                <div id="letterText">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
